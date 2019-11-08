@@ -1,12 +1,9 @@
 package components;
 
 public class Seven extends Slot {
-    public Seven(int aOdds){
-        super(aOdds);
+    public Seven(String name, int odd) {
+        super(name, odd);
     }
 
-    @Override
-    public String toString() {
-        return "Seven{}";
-    }
+
 }

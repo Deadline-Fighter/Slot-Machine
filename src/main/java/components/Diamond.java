@@ -1,7 +1,9 @@
 package components;
 
 public class Diamond extends Slot {
-    public Diamond(int odd) {
-        super(odd);
+    public Diamond(String name, int odd) {
+        super(name, odd);
     }
+
+
 }

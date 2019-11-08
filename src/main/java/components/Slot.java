@@ -1,7 +1,11 @@
 package components;
 
 public class Slot {
-    public Slot(int odd) {
+    private String name;
+    private int odd;
+
+    public Slot(String name, int odd) {
+        this.name = name;
         this.odd = odd;
     }
 
@@ -9,12 +13,8 @@ public class Slot {
         return odd;
     }
 
-    private int odd;
-
-    @Override
-    public String toString() {
-        return "AbstractSlot{" +
-                "odd=" + odd +
-                '}';
+    public String getName() {
+        return name;
     }
+
 }

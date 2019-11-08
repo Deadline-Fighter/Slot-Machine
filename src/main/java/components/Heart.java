@@ -1,7 +1,7 @@
 package components;
 
 public class Heart extends Slot {
-    public Heart(int odd) {
-        super(odd);
+    public Heart(String name, int odd) {
+        super(name, odd);
     }
 }
