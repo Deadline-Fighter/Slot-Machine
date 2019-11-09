@@ -6,7 +6,9 @@ import java.util.ArrayList;
 import java.util.Random;
 
 public class SlotMachine {
+
     private static final int ROWS = 3;
+
     private AbstractSlot[] leftSlots = {
             Bar.getBarInstance(),
             Cherry.getCherryInstance(),
@@ -39,16 +41,18 @@ public class SlotMachine {
             Shamrock.getShamrockInstance(),
     };
 
-    private ArrayList<AbstractSlot> leftColumns;
-    private ArrayList<AbstractSlot> centerColumns;
-    private ArrayList<AbstractSlot> rightColumns;
+    private ArrayList<AbstractSlot> leftColumn;
+
+    private ArrayList<AbstractSlot> centerColumn;
+
+    private ArrayList<AbstractSlot> rightColumn;
 
     private static SlotMachine slotMachineInstance = new SlotMachine();
 
     private SlotMachine() {
-        leftColumns = new ArrayList<AbstractSlot>();
-        centerColumns = new ArrayList<AbstractSlot>();
-        rightColumns = new ArrayList<AbstractSlot>();
+        leftColumn = new ArrayList<AbstractSlot>();
+        centerColumn = new ArrayList<AbstractSlot>();
+        rightColumn = new ArrayList<AbstractSlot>();
     }
 
     public static SlotMachine getInstance() {
@@ -66,8 +70,19 @@ public class SlotMachine {
         }
     }
 
-    public boolean isSamePattern() {
-        return false;
+    public boolean isHorizontallySame(int row) {
+        return this.leftColumn.get(row).equals(this.centerColumn.get(row).getName())
+                && this.centerColumn.get(row).getName().equals(this.rightColumn.get(row).getName());
+    }
+
+    public boolean isDiagonallySameTopLeftBottomRight() {
+        return this.leftColumn.get(0).getName().equals(this.centerColumn.get(1).getName())
+                && this.centerColumn.get(1).getName().equals(this.rightColumn.get(2).getName());
+    }
+
+    public boolean isDiagonallySameTopRightBottomLeft() {
+        return this.leftColumn.get(2).getName().equals(this.centerColumn.get(1).getName())
+                && this.centerColumn.get(1).getName().equals(this.rightColumn.get(0).getName());
     }
 
     public boolean isSameColour() {
