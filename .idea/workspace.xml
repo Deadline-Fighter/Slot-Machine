@@ -3,7 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="7ebc70f4-8e78-4740-b448-b476f16d824b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/GameController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/core/components/SlotMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/SlotMachine.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -35,6 +34,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="extract.method.default.visibility" value="private" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />

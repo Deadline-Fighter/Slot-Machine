@@ -1,6 +1,7 @@
 package core.components;
 
 import core.components.slot.*;
+import core.service.PatternChecker;
 
 import java.util.ArrayList;
 import java.util.Random;
@@ -49,14 +50,49 @@ public class SlotMachine {
 
     private static SlotMachine slotMachineInstance = new SlotMachine();
 
-    private SlotMachine() {
+    public SlotMachine() {
         leftColumn = new ArrayList<AbstractSlot>();
         centerColumn = new ArrayList<AbstractSlot>();
         rightColumn = new ArrayList<AbstractSlot>();
+
+
+        spinColumn(leftColumn,leftSlots);
+        spinColumn(centerColumn,centerSlots);
+        spinColumn(rightColumn,rightSlots);
     }
 
     public static SlotMachine getInstance() {
         return slotMachineInstance;
+    }
+
+    public int spin(){
+
+        //spin three col and reutrn max odds
+
+        int maxOdds = 0;
+
+        spinColumn(leftColumn,leftSlots);
+        spinColumn(centerColumn,centerSlots);
+        spinColumn(rightColumn,rightSlots);
+
+        for(int i = 0; i<ROWS; i++){
+            if(PatternChecker.isHorizontallySame(leftColumn,centerColumn,rightColumn,i)){
+                maxOdds = calMaxOdds(maxOdds, leftColumn.get(i).getOdd());
+            }
+        }
+
+        if (PatternChecker.isDiagonallySameTopLeftBottomRight(leftColumn,centerColumn,rightColumn))
+            calMaxOdds(maxOdds,leftColumn.get(0).getOdd());
+        if(PatternChecker.isDiagonallySameTopRightBottomLeft(leftColumn,centerColumn,rightColumn))
+            calMaxOdds(maxOdds,rightColumn.get(0).getOdd());
+
+        return maxOdds;
+    }
+
+    private int calMaxOdds(int maxOdds, int odds) {
+        if(odds > maxOdds)
+            maxOdds = odds;
+        return maxOdds;
     }
 
     public void spinColumn(ArrayList<AbstractSlot> col,AbstractSlot[] slot) {
@@ -69,8 +105,6 @@ public class SlotMachine {
             col.add(slot[(startIndex+i)%(slot.length)]);
         }
     }
-
-
 
 
 }
