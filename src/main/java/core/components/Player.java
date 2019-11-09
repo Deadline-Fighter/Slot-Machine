@@ -6,6 +6,8 @@ public class Player {
 
     private int tokens;
 
+    private SlotMachine slotMachine;
+
     public String getName() {
         return name;
     }
@@ -21,4 +23,5 @@ public class Player {
     public void setTokens(int tokens) {
         this.tokens = tokens;
     }
+
 }

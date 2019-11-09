@@ -3,7 +3,8 @@ package core.components.slot;
 import core.components.AbstractSlot;
 
 public class Diamond extends AbstractSlot {
-    public Diamond(String name, int odd) {
+    private static AbstractSlot diamondInstance = new Diamond(Diamond.class.getName(),50);
+    private Diamond(String name, int odd) {
         super(name, odd);
     }
 
