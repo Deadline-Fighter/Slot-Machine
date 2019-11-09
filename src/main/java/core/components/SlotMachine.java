@@ -3,14 +3,23 @@ package core.components;
 import java.util.ArrayList;
 
 public class SlotMachine {
-//    private ArrayList<AbstractSlot> slots;
 
-    private AbstractSlot[] slots;
+    private AbstractSlot[] leftSlots = {
+
+    };
+
+    private AbstractSlot[] centerSlots = {
+
+    };
+
+    private AbstractSlot[] rightSlots = {
+
+    };
 
     private static SlotMachine slotMachineInstance = new SlotMachine();
 
     private SlotMachine() {
-        this.slots = new AbstractSlot[3];
+
     }
 
     public static SlotMachine getInstance() {

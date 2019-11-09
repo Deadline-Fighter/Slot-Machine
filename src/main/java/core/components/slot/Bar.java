@@ -10,5 +10,7 @@ public class Bar extends AbstractSlot {
         super(name, odd);
     }
 
-
+    public static AbstractSlot getBarInstance() {
+        return barInstance;
+    }
 }
