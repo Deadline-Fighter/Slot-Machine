@@ -3,15 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="7ebc70f4-8e78-4740-b448-b476f16d824b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/components/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/Player.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/components/slot/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Bar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/components/slot/Cherry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Cherry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/components/slot/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Diamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/components/slot/Heart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Heart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/components/slot/Seven.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Seven.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/components/slot/Shamrock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Shamrock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/core/components/slot/Watermelon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Watermelon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/test/core/components/SlotMachineTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/core/components/SlotMachineTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/GameController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/GameController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/core/components/SlotMachine.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/SlotMachine.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
