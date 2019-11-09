@@ -70,25 +70,7 @@ public class SlotMachine {
         }
     }
 
-    public boolean isHorizontallySame(int row) {
-        return this.leftColumn.get(row).equals(this.centerColumn.get(row).getName())
-                && this.centerColumn.get(row).getName().equals(this.rightColumn.get(row).getName());
-    }
 
-    public boolean isDiagonallySameTopLeftBottomRight() {
-        return this.leftColumn.get(0).getName().equals(this.centerColumn.get(1).getName())
-                && this.centerColumn.get(1).getName().equals(this.rightColumn.get(2).getName());
-    }
-
-    public boolean isDiagonallySameTopRightBottomLeft() {
-        return this.leftColumn.get(2).getName().equals(this.centerColumn.get(1).getName())
-                && this.centerColumn.get(1).getName().equals(this.rightColumn.get(0).getName());
-    }
-
-    public boolean isSameColour() {
-        //TODO: add colour enum or interface for each slotItem
-        return false;
-    }
 
 
 }
