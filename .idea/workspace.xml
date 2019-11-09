@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7ebc70f4-8e78-4740-b448-b476f16d824b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Bar.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/Cherry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Cherry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Diamond.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/Heart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Heart.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/Seven.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Seven.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/Shamrock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Shamrock.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/Slot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Slot.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/components/WaterLemon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/components/Watermelon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Bar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Bar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Cherry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Cherry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Diamond.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Diamond.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Heart.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Heart.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Seven.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Seven.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Shamrock.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Shamrock.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Slot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/AbstractSlot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/components/Watermelon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/core/components/slot/Watermelon.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
