@@ -4,7 +4,7 @@ public class Player {
 
     private String name;
 
-    private int balance;
+    private int tokens;
 
     public String getName() {
         return name;
@@ -14,11 +14,11 @@ public class Player {
         this.name = name;
     }
 
-    public int getBalance() {
-        return balance;
+    public int getTokens() {
+        return tokens;
     }
 
-    public void setBalance(int balance) {
-        this.balance = balance;
+    public void setTokens(int tokens) {
+        this.tokens = tokens;
     }
 }

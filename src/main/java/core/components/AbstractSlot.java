@@ -9,6 +9,10 @@ public abstract class AbstractSlot {
         this.odd = odd;
     }
 
+    public AbstractSlot getInstance() {
+        return this;
+    }
+
     public int getOdd() {
         return odd;
     }
