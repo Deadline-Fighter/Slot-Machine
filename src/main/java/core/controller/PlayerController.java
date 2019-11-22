@@ -5,7 +5,13 @@ import core.components.Player;
 public class PlayerController {
     private static final int INITIAL_TOKENS = 100;
 
-    public PlayerController(){
+    private static PlayerController instance = new PlayerController();
+
+    private PlayerController(){
+    }
+
+    public static PlayerController getInstance(){
+        return instance;
     }
 
     public int addMoney(Player player, int money) {
