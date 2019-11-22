@@ -6,8 +6,6 @@ public class Player {
 
     private int tokens;
 
-    private SlotMachine slotMachine;
-
     public Player (String name, int tokens) {
         this.name = name;
         this.tokens = tokens;
