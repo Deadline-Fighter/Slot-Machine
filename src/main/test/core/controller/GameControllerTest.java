@@ -1,4 +1,4 @@
-package core;
+package core.controller;
 
 public class GameControllerTest {
 

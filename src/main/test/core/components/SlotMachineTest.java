@@ -1,13 +1,11 @@
 package core.components;
 
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
-import org.mockito.Mockito;
+
+import org.junit.Before;
 
 public class SlotMachineTest {
 
-
-    @BeforeAll
+    @Before
     public void before() {
 
     }

@@ -50,15 +50,11 @@ public class SlotMachine {
 
     private static SlotMachine slotMachineInstance = new SlotMachine();
 
-    public SlotMachine() {
+    private SlotMachine() {
         leftColumn = new ArrayList<AbstractSlot>();
         centerColumn = new ArrayList<AbstractSlot>();
         rightColumn = new ArrayList<AbstractSlot>();
 
-
-        spinColumn(leftColumn,leftSlots);
-        spinColumn(centerColumn,centerSlots);
-        spinColumn(rightColumn,rightSlots);
     }
 
     public static SlotMachine getInstance() {
@@ -71,10 +67,6 @@ public class SlotMachine {
 
         int maxOdds = 0;
 
-        spinColumn(leftColumn,leftSlots);
-        spinColumn(centerColumn,centerSlots);
-        spinColumn(rightColumn,rightSlots);
-
         for(int i = 0; i<ROWS; i++){
             if(PatternChecker.isHorizontallySame(leftColumn,centerColumn,rightColumn,i)){
                 maxOdds = calMaxOdds(maxOdds, leftColumn.get(i).getOdd());
@@ -82,11 +74,17 @@ public class SlotMachine {
         }
 
         if (PatternChecker.isDiagonallySameTopLeftBottomRight(leftColumn,centerColumn,rightColumn))
-            calMaxOdds(maxOdds,leftColumn.get(0).getOdd());
+            maxOdds = calMaxOdds(maxOdds,leftColumn.get(0).getOdd());
         if(PatternChecker.isDiagonallySameTopRightBottomLeft(leftColumn,centerColumn,rightColumn))
-            calMaxOdds(maxOdds,rightColumn.get(0).getOdd());
+            maxOdds = calMaxOdds(maxOdds,rightColumn.get(0).getOdd());
 
         return maxOdds;
+    }
+
+    public void randomizeColumns() {
+        spinColumn(leftColumn,leftSlots);
+        spinColumn(centerColumn,centerSlots);
+        spinColumn(rightColumn,rightSlots);
     }
 
     private int calMaxOdds(int maxOdds, int odds) {
@@ -95,7 +93,7 @@ public class SlotMachine {
         return maxOdds;
     }
 
-    public void spinColumn(ArrayList<AbstractSlot> col,AbstractSlot[] slot) {
+    private void spinColumn(ArrayList<AbstractSlot> col, AbstractSlot[] slot) {
 
         col.clear();
         Random random = new Random();
