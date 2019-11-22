@@ -4,43 +4,49 @@ import core.components.slot.*;
 import core.service.PatternChecker;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
-public class SlotMachine {
+public class SlotMachine implements Spinnable{
 
     private static final int ROWS = 3;
-
-    private AbstractSlot[] leftSlots = {
+    private static final int MAX_STEPS_TO_FORWARD = 7;
+    private ArrayList<AbstractSlot> leftSlots = new ArrayList<AbstractSlot>(Arrays.asList(
             Bar.getBarInstance(),
             Cherry.getCherryInstance(),
             Diamond.getDiamondInstance(),
             Heart.getHeartInstance(),
             Seven.getSevenInstance(),
             Shamrock.getShamrockInstance(),
-            Watermelon.getWatermelonInstance(),
-    };
+            Watermelon.getWatermelonInstance()));
 
-    private AbstractSlot[] centerSlots = {
-            Shamrock.getShamrockInstance(),
+    private ArrayList<AbstractSlot> centerSlots = new ArrayList<AbstractSlot>(Arrays.asList(Shamrock.getShamrockInstance(),
             Cherry.getCherryInstance(),
             Bar.getBarInstance(),
             Diamond.getDiamondInstance(),
             Watermelon.getWatermelonInstance(),
             Seven.getSevenInstance(),
-            Heart.getHeartInstance(),
+            Heart.getHeartInstance()));
 
-    };
+    public ArrayList<AbstractSlot> getLeftColumn() {
+        return leftColumn;
+    }
 
-    private AbstractSlot[] rightSlots = {
+    public ArrayList<AbstractSlot> getCenterColumn() {
+        return centerColumn;
+    }
 
-            Watermelon.getWatermelonInstance(),
+    public ArrayList<AbstractSlot> getRightColumn() {
+        return rightColumn;
+    }
+
+    private ArrayList<AbstractSlot> rightSlots = new ArrayList<AbstractSlot>(Arrays.asList( Watermelon.getWatermelonInstance(),
             Seven.getSevenInstance(),
             Cherry.getCherryInstance(),
             Diamond.getDiamondInstance(),
             Heart.getHeartInstance(),
             Bar.getBarInstance(),
-            Shamrock.getShamrockInstance(),
-    };
+            Shamrock.getShamrockInstance()));
 
     private ArrayList<AbstractSlot> leftColumn;
 
@@ -60,7 +66,6 @@ public class SlotMachine {
     public static SlotMachine getInstance() {
         return slotMachineInstance;
     }
-
     public int spin(){
 
         //spin three col and return max odds
@@ -81,10 +86,12 @@ public class SlotMachine {
         return maxOdds;
     }
 
+
+
     public void randomizeColumns() {
-        spinColumn(leftColumn,leftSlots);
-        spinColumn(centerColumn,centerSlots);
-        spinColumn(rightColumn,rightSlots);
+        leftColumn = spinColumn(leftSlots,leftColumn,getStepsToForward());
+        centerColumn = spinColumn(centerSlots,centerColumn,getStepsToForward());
+        rightColumn = spinColumn(rightSlots,rightColumn,getStepsToForward());
     }
 
     private int calMaxOdds(int maxOdds, int odds) {
@@ -93,16 +100,38 @@ public class SlotMachine {
         return maxOdds;
     }
 
-    private void spinColumn(ArrayList<AbstractSlot> col, AbstractSlot[] slot) {
+    private ArrayList<AbstractSlot> spinColumn(ArrayList<AbstractSlot>slots, ArrayList<AbstractSlot> col, int stepsForward) {
+        //spin a column and return a new column
+//        col.clear();
+//        Random random = new Random();
+//        int startIndex = random.nextInt(slot.length);
+//
+//        for (int i = 0;i<ROWS;i++){
+//            col.add(slot[(startIndex+i)%(slot.length)]);
+//        }
 
-        col.clear();
-        Random random = new Random();
-        int startIndex = random.nextInt(slot.length);
-
-        for (int i = 0;i<ROWS;i++){
-            col.add(slot[(startIndex+i)%(slot.length)]);
+        ArrayList<AbstractSlot> newColumn = new ArrayList<AbstractSlot>();
+        int startIndex;
+        if(col.size() == 0)
+            startIndex = 0;
+        else
+            startIndex =  slots.indexOf(col.get(0));
+        for(int i = 0; i < ROWS;i++){
+            newColumn.add(slots.get((startIndex+stepsForward+i)%slots.size()));
         }
+        return newColumn;
     }
 
+    private int getStepsToForward(){
+        Random random = new Random();
+        int stepsToForward = random.nextInt(MAX_STEPS_TO_FORWARD);
+        return stepsToForward;
+    }
+
+    public void printSlots(){
+        for(int i = 0; i< ROWS;i++){
+            System.out.printf("%-15s|%-15s|%-15s\n",leftColumn.get(i).getName(),centerColumn.get(i).getName(),rightColumn.get(i).getName());
+        }
+    }
 
 }

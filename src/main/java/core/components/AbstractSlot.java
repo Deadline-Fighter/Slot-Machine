@@ -14,7 +14,7 @@ public abstract class AbstractSlot {
     }
 
     public String getName() {
-        return name;
+        return name.toString();
     }
 
 }

@@ -1,4 +1,4 @@
-import core.controller.GameController;
+import core.controller.*;
 
 public class Main {
 
