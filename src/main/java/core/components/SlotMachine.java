@@ -63,7 +63,7 @@ public class SlotMachine {
 
     public int spin(){
 
-        //spin three col and reutrn max odds
+        //spin three col and return max odds
 
         int maxOdds = 0;
 

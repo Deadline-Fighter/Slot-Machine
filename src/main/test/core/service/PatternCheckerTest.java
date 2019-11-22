@@ -47,6 +47,7 @@ public class PatternCheckerTest {
         Mockito.when(centerColumn.get(2)).thenReturn(center_3);
 
         ArrayList rightColumn = Mockito.mock(ArrayList.class);
+
     }
 
     private AbstractSlot getMockedObject(Object obj, String name, int odds) {

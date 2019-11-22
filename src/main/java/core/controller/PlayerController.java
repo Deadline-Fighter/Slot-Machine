@@ -5,7 +5,7 @@ import core.components.Player;
 public class PlayerController {
     private static final int INITIAL_TOKENS = 100;
 
-    public PlayerController(String name){
+    public PlayerController(){
     }
 
     public int addMoney(Player player, int money) {

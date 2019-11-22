@@ -26,5 +26,4 @@ public class Player {
     public void setTokens(int tokens) {
         this.tokens = tokens;
     }
-
 }
