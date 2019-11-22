@@ -1,10 +1,10 @@
-package components;
+package core.components;
 
-public class Slot {
+public abstract class AbstractSlot {
     private String name;
     private int odd;
 
-    public Slot(String name, int odd) {
+    public AbstractSlot(String name, int odd) {
         this.name = name;
         this.odd = odd;
     }
