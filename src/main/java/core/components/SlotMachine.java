@@ -94,7 +94,7 @@ public class SlotMachine implements Spinnable{
         rightColumn = spinColumn(rightSlots,rightColumn,getStepsToForward());
     }
 
-    private int calMaxOdds(int maxOdds, int odds) {
+    public int calMaxOdds(int maxOdds, int odds) {
         if(odds > maxOdds)
             maxOdds = odds;
         return maxOdds;
