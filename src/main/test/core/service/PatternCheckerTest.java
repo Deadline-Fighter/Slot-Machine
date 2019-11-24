@@ -4,23 +4,23 @@ import core.components.AbstractSlot;
 import core.components.slot.Bar;
 import core.components.slot.Heart;
 import core.components.slot.Seven;
-import org.junit.Before;
+//import org.junit.Before;
 import org.junit.jupiter.api.Test;
-import org.junit.runner.RunWith;
+//import org.junit.runner.RunWith;
 import org.mockito.Mockito;
 import org.mockito.junit.MockitoJUnitRunner;
 
 import java.util.ArrayList;
-
-@RunWith(MockitoJUnitRunner.class)
+//
+//@RunWith(MockitoJUnitRunner.class)
 public class PatternCheckerTest {
 
     private PatternChecker checker;
 
-    @Before
-    public void before() {
-        checker = new PatternChecker();
-    }
+//    @Before
+//    public void before() {
+//        checker = new PatternChecker();
+//    }
 
     @Test
     public void testIsHorizontallySame() {

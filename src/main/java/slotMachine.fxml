@@ -14,7 +14,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.core.controller.GameController">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.4" xmlns:fx="http://javafx.com/fxml/1" fx:controller="core.controller.GameController">
    <center>
       <GridPane maxHeight="360.0" maxWidth="372.0" minHeight="55.0" minWidth="176.0" prefHeight="360.0" prefWidth="372.0" BorderPane.alignment="CENTER">
         <columnConstraints>
