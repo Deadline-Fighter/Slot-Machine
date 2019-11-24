@@ -8,7 +8,7 @@ public class PatternChecker {
 
     public static boolean isHorizontallySame(ArrayList<AbstractSlot> leftColumn, ArrayList<AbstractSlot> centerColumn,
                                              ArrayList<AbstractSlot> rightColumn, int row) {
-        return leftColumn.get(row).equals(centerColumn.get(row).getName())
+        return leftColumn.get(row).getName().equals(centerColumn.get(row).getName())
                 && centerColumn.get(row).getName().equals(rightColumn.get(row).getName());
     }
 
