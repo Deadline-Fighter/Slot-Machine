@@ -58,7 +58,7 @@
             <HBox layoutX="10.0" layoutY="110.0" prefHeight="72.0" prefWidth="160.0">
                <children>
                   <Label prefHeight="29.0" prefWidth="47.0" text="Bets" />
-                  <Spinner fx:id="bets" editable="true" prefHeight="28.0" prefWidth="109.0" />
+                  <Spinner fx:id="bets" editable="false" prefHeight="28.0" prefWidth="109.0" />
 
 
                </children>
