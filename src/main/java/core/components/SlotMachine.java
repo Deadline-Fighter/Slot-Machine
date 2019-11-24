@@ -11,23 +11,44 @@ import java.util.Random;
 public class SlotMachine implements Spinnable{
 
     private static final int ROWS = 3;
-    private static final int MAX_STEPS_TO_FORWARD = 7;
-    private ArrayList<AbstractSlot> leftSlots = new ArrayList<AbstractSlot>(Arrays.asList(
-            Bar.getBarInstance(),
-            Cherry.getCherryInstance(),
-            Diamond.getDiamondInstance(),
-            Heart.getHeartInstance(),
-            Seven.getSevenInstance(),
-            Shamrock.getShamrockInstance(),
-            Watermelon.getWatermelonInstance()));
 
-    private ArrayList<AbstractSlot> centerSlots = new ArrayList<AbstractSlot>(Arrays.asList(Shamrock.getShamrockInstance(),
-            Cherry.getCherryInstance(),
-            Bar.getBarInstance(),
-            Diamond.getDiamondInstance(),
-            Watermelon.getWatermelonInstance(),
-            Seven.getSevenInstance(),
-            Heart.getHeartInstance()));
+    private static final int MAX_STEPS_TO_FORWARD = 7;
+
+    private ArrayList<AbstractSlot> leftSlots = new ArrayList<AbstractSlot>(
+            Arrays.asList(
+                    Bar.getBarInstance(),
+                    Cherry.getCherryInstance(),
+                    Diamond.getDiamondInstance(),
+                    Heart.getHeartInstance(),
+                    Seven.getSevenInstance(),
+                    Shamrock.getShamrockInstance(),
+                    Watermelon.getWatermelonInstance()
+            )
+    );
+
+    private ArrayList<AbstractSlot> centerSlots = new ArrayList<AbstractSlot>(
+            Arrays.asList(
+                    Shamrock.getShamrockInstance(),
+                    Cherry.getCherryInstance(),
+                    Bar.getBarInstance(),
+                    Diamond.getDiamondInstance(),
+                    Watermelon.getWatermelonInstance(),
+                    Seven.getSevenInstance(),
+                    Heart.getHeartInstance()
+            )
+    );
+
+    private ArrayList<AbstractSlot> rightSlots = new ArrayList<AbstractSlot>(
+            Arrays.asList(
+                    Watermelon.getWatermelonInstance(),
+                    Seven.getSevenInstance(),
+                    Cherry.getCherryInstance(),
+                    Diamond.getDiamondInstance(),
+                    Heart.getHeartInstance(),
+                    Bar.getBarInstance(),
+                    Shamrock.getShamrockInstance()
+            )
+    );
 
     public ArrayList<AbstractSlot> getLeftColumn() {
         return leftColumn;
@@ -40,14 +61,6 @@ public class SlotMachine implements Spinnable{
     public ArrayList<AbstractSlot> getRightColumn() {
         return rightColumn;
     }
-
-    private ArrayList<AbstractSlot> rightSlots = new ArrayList<AbstractSlot>(Arrays.asList( Watermelon.getWatermelonInstance(),
-            Seven.getSevenInstance(),
-            Cherry.getCherryInstance(),
-            Diamond.getDiamondInstance(),
-            Heart.getHeartInstance(),
-            Bar.getBarInstance(),
-            Shamrock.getShamrockInstance()));
 
     private ArrayList<AbstractSlot> leftColumn;
 
@@ -67,6 +80,7 @@ public class SlotMachine implements Spinnable{
     public static SlotMachine getInstance() {
         return slotMachineInstance;
     }
+
     public int spin(){
 
         //spin three col and return max odds
@@ -86,7 +100,6 @@ public class SlotMachine implements Spinnable{
 
         return maxOdds;
     }
-
 
 
     public void randomizeColumns() {
