@@ -14,6 +14,7 @@ import java.net.URL;
 import java.util.ArrayList;
 
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
 
 public class GameController  implements Initializable{
@@ -50,7 +51,7 @@ public class GameController  implements Initializable{
     public GameController(){
         playerController = PlayerController.getInstance();
         slotMachine = SlotMachine.getInstance();
-        player = new Player("Stanley", 10000);
+        player = new Player("Jason", 100);
 
     }
     //
@@ -66,27 +67,32 @@ public class GameController  implements Initializable{
 
     public void start() {
 
-        int wager = bets.getValue();
-        if(wager > player.getTokens()){
-            message.setText("You don't have so much tokens");
-        }
-        else if(wager<1){
-            message.setText("You must enter some tokens");
-        }
-        else{
-            this.playerController.loseMoney(player, wager);
-            int odds = slotMachine.spin();
-            setImages( slotMachine.getImages());
-            if (odds > 0){
-                int winning = wager*odds;
-                playerController.addMoney(player,winning);
-                tokens.setText(Integer.toString(player.getTokens()));
-                message.setText(String.format("You win %d tokens",winning));
+        try{
+            int wager = bets.getValue();
+            if(wager > player.getTokens()){
+                message.setText("You don't have so much tokens");
+            }
+            else if(wager<1){
+                message.setText("You must enter some tokens");
             }
             else{
-                tokens.setText(Integer.toString(playerController.getMoney(player)));
-                message.setText(String.format("You lose"));
+                this.playerController.loseMoney(player, wager);
+                int odds = slotMachine.spin();
+                setImages( slotMachine.getImages());
+                if (odds > 0){
+                    int winning = wager*odds;
+                    playerController.addMoney(player,winning);
+                    tokens.setText(Integer.toString(player.getTokens()));
+                    message.setText(String.format("You win %d tokens",winning));
+                }
+                else{
+                    tokens.setText(Integer.toString(playerController.getMoney(player)));
+                    message.setText(String.format("You lose"));
+                }
             }
+
+        }catch (Exception e){
+            message.setText("you must enter valid numeric bets");
         }
 
     }
@@ -95,10 +101,10 @@ public class GameController  implements Initializable{
         return player.getTokens() <= 0;
     }
     private void initBets() {
-        bets.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 999999999));
+        bets.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 100));
 
     }
-    public void updateBets(Integer wager) {
+        public void updateBets(Integer wager) {
         bets.getValueFactory().setValue(wager);
     }
     private void setImages(ArrayList<Image> imageList){
@@ -112,4 +118,5 @@ public class GameController  implements Initializable{
         image8.setImage(imageList.get(7));
         image9.setImage(imageList.get(8));
     }
+
 }
