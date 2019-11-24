@@ -50,7 +50,7 @@ public class GameController  implements Initializable{
     public GameController(){
         playerController = PlayerController.getInstance();
         slotMachine = SlotMachine.getInstance();
-        player = new Player("Stanley", 10000);
+        player = new Player("Jason", 100);
 
     }
     //
