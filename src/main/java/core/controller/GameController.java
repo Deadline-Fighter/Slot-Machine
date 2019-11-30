@@ -16,44 +16,71 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
-public class GameController  implements Initializable{
+public class GameController implements Initializable {
+
     private PlayerController playerController;
-    private final Player player;
-    private final SlotMachine slotMachine;
+
+    private Player player;
+
+    private SlotMachine slotMachine;
+
     @FXML
     private Label userName;
+
     @FXML
     private Label tokens;
+
     @FXML
     private Spinner<Integer> bets;
+
     @FXML
     private Label message;
+
     @FXML
     private ImageView image1;
+
     @FXML
     private ImageView image2;
+
     @FXML
     private ImageView image3;
+
     @FXML
     private ImageView image4;
+
     @FXML
     private ImageView image5;
+
     @FXML
     private ImageView image6;
+
     @FXML
     private ImageView image7;
+
     @FXML
     private ImageView image8;
+
     @FXML
     private ImageView image9;
 
-    public GameController(){
-        playerController = PlayerController.getInstance();
-        slotMachine = SlotMachine.getInstance();
-        player = new Player("Stanley", 10000);
-
+    public void setPlayerController(PlayerController playerController) {
+        this.playerController = playerController;
     }
-    //
+
+    public void setPlayer(Player player) {
+        this.player = player;
+    }
+
+    public void setSlotMachine(SlotMachine slotMachine) {
+        this.slotMachine = slotMachine;
+    }
+
+    public GameController(){
+        this.setPlayerController(PlayerController.getInstance());
+        this.setSlotMachine(SlotMachine.getInstance());
+        this.setPlayer(new Player("Stanley", 10000));
+    }
+
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
         initBets();
@@ -88,19 +115,21 @@ public class GameController  implements Initializable{
                 message.setText(String.format("You lose"));
             }
         }
-
     }
 
     public boolean isBankrupt(Player player) {
         return player.getTokens() <= 0;
     }
+
     private void initBets() {
         bets.setValueFactory(new SpinnerValueFactory.IntegerSpinnerValueFactory(0, 999999999));
 
     }
+
     public void updateBets(Integer wager) {
         bets.getValueFactory().setValue(wager);
     }
+
     private void setImages(ArrayList<Image> imageList){
         image1.setImage(imageList.get(0));
         image2.setImage(imageList.get(1));

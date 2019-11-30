@@ -24,17 +24,17 @@ public class PatternCheckerTest {
 
         final List<AbstractSlot> left = new ArrayList<>();
         left.add(Bar.getBarInstance());
-        left.add(Cherry.getCherryInstance());
+        left.add(CherryTest.getCherryInstance());
         left.add(Diamond.getDiamondInstance());
 
         final List<AbstractSlot> center = new ArrayList<>();
         center.add(Seven.getSevenInstance());
-        center.add(Cherry.getCherryInstance());
+        center.add(CherryTest.getCherryInstance());
         center.add(Diamond.getDiamondInstance());
 
         final List<AbstractSlot> right = new ArrayList<>();
         right.add(Bar.getBarInstance());
-        right.add(Cherry.getCherryInstance());
+        right.add(CherryTest.getCherryInstance());
         right.add(Watermelon.getWatermelonInstance());
 
         assertTrue(PatternChecker.isHorizontallySame(left, center, right, 1));
@@ -50,17 +50,17 @@ public class PatternCheckerTest {
     @Test
     public void testIsHorizontallySameFirstRow() {
         final List<AbstractSlot> left = new ArrayList<>();
-        left.add(Cherry.getCherryInstance());
+        left.add(CherryTest.getCherryInstance());
         left.add(Bar.getBarInstance());
         left.add(Diamond.getDiamondInstance());
 
         final List<AbstractSlot> center = new ArrayList<>();
-        center.add(Cherry.getCherryInstance());
+        center.add(CherryTest.getCherryInstance());
         center.add(Seven.getSevenInstance());
         center.add(Diamond.getDiamondInstance());
 
         final List<AbstractSlot> right = new ArrayList<>();
-        right.add(Cherry.getCherryInstance());
+        right.add(CherryTest.getCherryInstance());
         right.add(Bar.getBarInstance());
         right.add(Watermelon.getWatermelonInstance());
 
@@ -79,17 +79,17 @@ public class PatternCheckerTest {
         final List<AbstractSlot> left = new ArrayList<>();
         left.add(Bar.getBarInstance());
         left.add(Diamond.getDiamondInstance());
-        left.add(Cherry.getCherryInstance());
+        left.add(CherryTest.getCherryInstance());
 
         final List<AbstractSlot> center = new ArrayList<>();
         center.add(Seven.getSevenInstance());
         center.add(Diamond.getDiamondInstance());
-        center.add(Cherry.getCherryInstance());
+        center.add(CherryTest.getCherryInstance());
 
         final List<AbstractSlot> right = new ArrayList<>();
         right.add(Bar.getBarInstance());
         right.add(Watermelon.getWatermelonInstance());
-        right.add(Cherry.getCherryInstance());
+        right.add(CherryTest.getCherryInstance());
 
         assertTrue(PatternChecker.isHorizontallySame(left, center, right, 2));
         assertFalse(PatternChecker.isHorizontallySame(left, center, right, 0));
@@ -106,17 +106,17 @@ public class PatternCheckerTest {
         final List<AbstractSlot> left = new ArrayList<>();
         left.add(Bar.getBarInstance());
         left.add(Diamond.getDiamondInstance());
-        left.add(Cherry.getCherryInstance());
+        left.add(CherryTest.getCherryInstance());
 
         final List<AbstractSlot> center = new ArrayList<>();
         center.add(Diamond.getDiamondInstance());
-        center.add(Cherry.getCherryInstance());
+        center.add(CherryTest.getCherryInstance());
         center.add(Seven.getSevenInstance());
 
         final List<AbstractSlot> right = new ArrayList<>();
         right.add(Bar.getBarInstance());
         right.add(Watermelon.getWatermelonInstance());
-        right.add(Cherry.getCherryInstance());
+        right.add(CherryTest.getCherryInstance());
 
         assertFalse(PatternChecker.isHorizontallySame(left, center, right, 0));
         assertFalse(PatternChecker.isHorizontallySame(left, center, right, 1));
@@ -127,19 +127,19 @@ public class PatternCheckerTest {
     @Test
     public void testIsDiagonallySameTopLeftBottomRight() {
         final List<AbstractSlot> left = new ArrayList<>();
-        left.add(Cherry.getCherryInstance());
+        left.add(CherryTest.getCherryInstance());
         left.add(Bar.getBarInstance());
         left.add(Diamond.getDiamondInstance());
 
         final List<AbstractSlot> center = new ArrayList<>();
         center.add(Diamond.getDiamondInstance());
-        center.add(Cherry.getCherryInstance());
+        center.add(CherryTest.getCherryInstance());
         center.add(Seven.getSevenInstance());
 
         final List<AbstractSlot> right = new ArrayList<>();
         right.add(Bar.getBarInstance());
         right.add(Watermelon.getWatermelonInstance());
-        right.add(Cherry.getCherryInstance());
+        right.add(CherryTest.getCherryInstance());
 
         assertTrue(PatternChecker.isDiagonallySameTopLeftBottomRight(left, center, right));
     }
@@ -148,18 +148,18 @@ public class PatternCheckerTest {
     @Test
     public void testIsDiagonallySameTopLeftBottomRightNoMatch() {
         final List<AbstractSlot> left = new ArrayList<>();
-        left.add(Cherry.getCherryInstance());
+        left.add(CherryTest.getCherryInstance());
         left.add(Bar.getBarInstance());
         left.add(Diamond.getDiamondInstance());
 
         final List<AbstractSlot> center = new ArrayList<>();
         center.add(Diamond.getDiamondInstance());
-        center.add(Cherry.getCherryInstance());
+        center.add(CherryTest.getCherryInstance());
         center.add(Seven.getSevenInstance());
 
         final List<AbstractSlot> right = new ArrayList<>();
         right.add(Bar.getBarInstance());
-        right.add(Cherry.getCherryInstance());
+        right.add(CherryTest.getCherryInstance());
         right.add(Watermelon.getWatermelonInstance());
 
         assertFalse(PatternChecker.isDiagonallySameTopLeftBottomRight(left, center, right));
@@ -169,19 +169,19 @@ public class PatternCheckerTest {
     @Test
     public void testIsDiagonallySameTopRightBottomLeft() {
         final List<AbstractSlot> right = new ArrayList<>();
-        right.add(Cherry.getCherryInstance());
+        right.add(CherryTest.getCherryInstance());
         right.add(Bar.getBarInstance());
         right.add(Diamond.getDiamondInstance());
 
         final List<AbstractSlot> center = new ArrayList<>();
         center.add(Diamond.getDiamondInstance());
-        center.add(Cherry.getCherryInstance());
+        center.add(CherryTest.getCherryInstance());
         center.add(Seven.getSevenInstance());
 
         final List<AbstractSlot> left = new ArrayList<>();
         left.add(Bar.getBarInstance());
         left.add(Watermelon.getWatermelonInstance());
-        left.add(Cherry.getCherryInstance());
+        left.add(CherryTest.getCherryInstance());
 
         assertTrue(PatternChecker.isDiagonallySameTopRightBottomLeft(left, center, right));
     }
@@ -190,19 +190,19 @@ public class PatternCheckerTest {
     @Test
     public void testIsDiagonallySameTopRightBottomLeftNoMatch() {
         final List<AbstractSlot> right = new ArrayList<>();
-        right.add(Cherry.getCherryInstance());
+        right.add(CherryTest.getCherryInstance());
         right.add(Bar.getBarInstance());
         right.add(Diamond.getDiamondInstance());
 
         final List<AbstractSlot> center = new ArrayList<>();
         center.add(Diamond.getDiamondInstance());
         center.add(Seven.getSevenInstance());
-        center.add(Cherry.getCherryInstance());
+        center.add(CherryTest.getCherryInstance());
 
         final List<AbstractSlot> left = new ArrayList<>();
         left.add(Bar.getBarInstance());
         left.add(Watermelon.getWatermelonInstance());
-        left.add(Cherry.getCherryInstance());
+        left.add(CherryTest.getCherryInstance());
 
         assertFalse(PatternChecker.isDiagonallySameTopRightBottomLeft(left, center, right));
     }
