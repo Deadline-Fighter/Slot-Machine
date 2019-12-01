@@ -16,4 +16,9 @@ public class Silver implements Membership{
     public double getBonus() {
         return 1;
     }
+
+    @Override
+    public String getImageURL() {
+        return "file:./src/imgs/silverMember.png";
+    }
 }

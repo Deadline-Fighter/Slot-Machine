@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Menu?>
@@ -14,7 +15,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml" fx:controller="core.controller.GameController">
+<BorderPane xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="core.controller.GameController">
    <center>
       <GridPane maxHeight="360.0" maxWidth="372.0" minHeight="55.0" minWidth="176.0" prefHeight="360.0" prefWidth="372.0" BorderPane.alignment="CENTER">
         <columnConstraints>
@@ -43,10 +44,14 @@
    <right>
       <VBox prefHeight="462.0" prefWidth="160.0" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="100.0" prefWidth="200.0">
+            <HBox prefHeight="101.0" prefWidth="160.0">
                <children>
-                  <Label prefHeight="51.0" prefWidth="53.0" text="Player" />
-                  <Label fx:id="userName" layoutX="10.0" layoutY="10.0" prefHeight="51.0" prefWidth="104.0" text="name" />
+                  <ImageView fx:id="membership" fitHeight="32.0" fitWidth="36.0" pickOnBounds="true" preserveRatio="true">
+                     <HBox.margin>
+                        <Insets right="5.0" top="10.0" />
+                     </HBox.margin></ImageView>
+                  <Label prefHeight="51.0" prefWidth="66.0" text="Player" />
+                  <Label fx:id="userName" layoutX="10.0" layoutY="10.0" prefHeight="51.0" prefWidth="84.0" text="name" />
                </children>
             </HBox>
             <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
@@ -65,10 +70,10 @@
             </HBox>
             <HBox prefHeight="47.0" prefWidth="160.0">
                <children>
-                  <Label fx:id="message" prefHeight="39.0" prefWidth="157.0" text="Come To Play!" />
+                  <Label fx:id="message" prefHeight="70.0" prefWidth="158.0" text="Come To Play!" />
                </children>
             </HBox>
-            <HBox prefHeight="78.0" prefWidth="160.0">
+            <HBox prefHeight="81.0" prefWidth="160.0">
                <children>
                   <Button mnemonicParsing="false" onAction="#start" prefHeight="78.0" prefWidth="119.0" text="Start" />
                </children>
