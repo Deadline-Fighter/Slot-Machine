@@ -11,8 +11,7 @@ public class PlayerController {
 
     private static PlayerController instance = new PlayerController();
 
-    private PlayerController(){
-    }
+    private PlayerController() {}
 
     public static PlayerController getInstance(){
         return instance;
@@ -32,16 +31,15 @@ public class PlayerController {
         balance -= money;
         player.setTokens(balance);
         this.changeMembership(player);
-        System.out.println(player.getMembership());
         return balance;
     }
 
     public void changeMembership(Player player){
-        if(player.getTotalSpent() >= 500 && player.getMembership() == Silver.getInstance()){
-            player.setMembership(Gold.getInstance());
-        }
-        else if(player.getTotalSpent() >=5000 && player.getMembership() != Diamond.getInstance()){
+        if (player.getTotalSpent() >=5000 && player.getMembership() != Diamond.getInstance()) {
             player.setMembership(Diamond.getInstance());
+        }
+        else if (player.getTotalSpent() >= 500 && player.getMembership() == Silver.getInstance()) {
+            player.setMembership(Gold.getInstance());
         }
     }
 
