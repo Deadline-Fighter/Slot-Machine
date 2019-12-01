@@ -134,12 +134,6 @@ public class SlotMachine implements Spinnable{
         return stepsToForward;
     }
 
-    public void printSlots(){
-        for(int i = 0; i< ROWS;i++){
-            System.out.printf("%-15s|%-15s|%-15s\n",leftColumn.get(i).getName(),centerColumn.get(i).getName(),rightColumn.get(i).getName());
-        }
-    }
-
     public ArrayList<Image> getImages(){
         ArrayList<Image> images = new ArrayList<>();
         for(int i=0;i<ROWS;i++){

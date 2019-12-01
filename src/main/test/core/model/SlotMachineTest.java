@@ -2,6 +2,7 @@ package core.model;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
@@ -25,5 +26,12 @@ public class SlotMachineTest {
         assertNotNull(slotMachine.getCenterColumn());
         assertNotNull(slotMachine.getRightColumn());
     }
+
+    @Test
+    public void testSpin() {
+
+        this.slotMachine.spin();
+    }
+
 
 }
