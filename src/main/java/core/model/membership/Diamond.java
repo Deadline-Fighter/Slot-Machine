@@ -15,4 +15,9 @@ public class Diamond implements Membership{
     public double getBonus() {
         return 1.3;
     }
+
+    @Override
+    public String getImageURL() {
+        return "file:./src/imgs/diamondMember.png";
+    }
 }

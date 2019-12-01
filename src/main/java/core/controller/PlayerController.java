@@ -6,6 +6,7 @@ import core.model.membership.Gold;
 import core.model.membership.Silver;
 
 public class PlayerController {
+
     private static final int INITIAL_TOKENS = 10000;
 
     private static PlayerController instance = new PlayerController();
@@ -36,10 +37,10 @@ public class PlayerController {
     }
 
     public void changeMembership(Player player){
-        if(player.getTotalSpent() >= 100 && player.getMembership() == Silver.getInstance()){
+        if(player.getTotalSpent() >= 500 && player.getMembership() == Silver.getInstance()){
             player.setMembership(Gold.getInstance());
         }
-        else if(player.getTotalSpent() >=1000 && player.getMembership() != Diamond.getInstance()){
+        else if(player.getTotalSpent() >=5000 && player.getMembership() != Diamond.getInstance()){
             player.setMembership(Diamond.getInstance());
         }
     }

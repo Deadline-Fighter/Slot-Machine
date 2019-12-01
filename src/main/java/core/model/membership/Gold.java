@@ -15,4 +15,9 @@ public class Gold implements Membership{
     public double getBonus() {
         return 1.1;
     }
+
+    @Override
+    public String getImageURL() {
+        return "file:./src/imgs/goldMember.png";
+    }
 }

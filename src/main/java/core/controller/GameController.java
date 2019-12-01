@@ -63,6 +63,9 @@ public class GameController implements Initializable {
     @FXML
     private ImageView image9;
 
+    @FXML
+    private ImageView membership;
+
     public void setPlayerController(PlayerController playerController) {
         this.playerController = playerController;
     }
@@ -96,6 +99,7 @@ public class GameController implements Initializable {
         tokens.setText(Integer.toString(player.getTokens()));
         message.setWrapText(true);
         setImages(slotMachine.getImages());
+        setMembershipImage();
     }
 
 
@@ -111,6 +115,7 @@ public class GameController implements Initializable {
             }
             else{
                 this.playerController.loseMoney(player, wager);
+                setMembershipImage();
                 int odds = slotMachine.spin();
                 setImages( slotMachine.getImages());
                 if (odds > 0){
@@ -153,6 +158,10 @@ public class GameController implements Initializable {
         image7.setImage(imageList.get(6));
         image8.setImage(imageList.get(7));
         image9.setImage(imageList.get(8));
+    }
+
+    public void setMembershipImage(){
+        membership.setImage(new Image(player.getMembership().getImageURL()));
     }
 
 }
