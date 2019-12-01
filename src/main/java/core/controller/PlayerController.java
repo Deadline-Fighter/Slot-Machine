@@ -31,7 +31,7 @@ public class PlayerController {
         player.setTotalSpent(player.getTotalSpent() + money);
         balance -= money;
         player.setTokens(balance);
-        changeMembership(player);
+        this.changeMembership(player);
         System.out.println(player.getMembership());
         return balance;
     }
@@ -43,9 +43,6 @@ public class PlayerController {
         else if(player.getTotalSpent() >=5000 && player.getMembership() != Diamond.getInstance()){
             player.setMembership(Diamond.getInstance());
         }
-    }
-    public boolean isBankrupt(Player player){
-        return player.getTokens() <= 0;
     }
 
     public int getMoney(Player player){

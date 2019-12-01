@@ -106,6 +106,7 @@ public class GameController implements Initializable {
     public void start() {
 
         try{
+            this.setMembershipImage();
             int wager = bets.getValue();
             if(wager > player.getTokens()){
                 message.setText("You don't have so much tokens");
@@ -114,29 +115,37 @@ public class GameController implements Initializable {
                 message.setText("You must enter some tokens");
             }
             else{
-                this.playerController.loseMoney(player, wager);
-                setMembershipImage();
-                int odds = slotMachine.spin();
-                setImages( slotMachine.getImages());
-                if (odds > 0){
-                    int winning = (int)(wager*odds*player.getBonus());
-                    playerController.addMoney(player,winning);
+                int result = this.runMachine(wager);
+                if (result > 0) {
                     tokens.setText(Integer.toString(player.getTokens()));
-                    message.setText(String.format("You win %d tokens",winning));
-                }
-                else{
+                    message.setText(String.format("You win %d tokens",result));
+                } else {
                     tokens.setText(Integer.toString(playerController.getMoney(player)));
                     message.setText(String.format("You lose"));
                 }
             }
 
-        }catch (Exception e){
+        } catch (NumberFormatException e) {
             message.setText("you must enter valid numeric bets");
+        } catch (Exception e) {
+            message.setText("Unknown exception");
+            System.out.println(e.toString());
         }
     }
 
-    public boolean isBankrupt(Player player) {
-        return player.getTokens() <= 0;
+    int runMachine(int wager) {
+
+        this.playerController.loseMoney(player, wager);
+        int odds = slotMachine.spin();
+        this.setImages(slotMachine.getImages());
+        if (odds > 0){
+            int winning = (int)(wager*odds*player.getBonus());
+            playerController.addMoney(player,winning);
+            return winning;
+        }
+        else {
+            return 0;
+        }
     }
 
     private void initBets() {
@@ -144,11 +153,8 @@ public class GameController implements Initializable {
 
     }
 
-    public void updateBets(Integer wager) {
-        bets.getValueFactory().setValue(wager);
-    }
+    void setImages(ArrayList<Image> imageList) {
 
-    private void setImages(ArrayList<Image> imageList){
         image1.setImage(imageList.get(0));
         image2.setImage(imageList.get(1));
         image3.setImage(imageList.get(2));
@@ -160,7 +166,7 @@ public class GameController implements Initializable {
         image9.setImage(imageList.get(8));
     }
 
-    public void setMembershipImage(){
+    void setMembershipImage() {
         membership.setImage(new Image(player.getMembership().getImageURL()));
     }
 
