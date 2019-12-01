@@ -75,6 +75,14 @@ public class GameController implements Initializable {
         this.slotMachine = slotMachine;
     }
 
+    public void setBets(Spinner<Integer> bets) {
+        this.bets = bets;
+    }
+
+    public void setMessage(Label message) {
+        this.message = message;
+    }
+
     public GameController(){
         this.setPlayerController(PlayerController.getInstance());
         this.setSlotMachine(SlotMachine.getInstance());
