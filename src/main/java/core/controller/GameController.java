@@ -9,6 +9,8 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import core.model.Player;
 import core.model.SlotMachine;
+import org.apache.log4j.Logger;
+
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -63,6 +65,8 @@ public class GameController implements Initializable {
     @FXML
     private ImageView image9;
 
+    private static Logger logger = Logger.getLogger(GameController.class);
+
     public void setPlayerController(PlayerController playerController) {
         this.playerController = playerController;
     }
@@ -87,6 +91,12 @@ public class GameController implements Initializable {
         this.setPlayerController(PlayerController.getInstance());
         this.setSlotMachine(SlotMachine.getInstance());
         this.setPlayer(new Player("Stanley", 10000));
+
+        logger.debug(String.format("Initializing GameController: \n" +
+                "PlayerController: %s\n" +
+                "SlotMachine: %s\n" +
+                "Player: %s"
+                , this.playerController, this.slotMachine, this.player.toString()));
     }
 
     @FXML
@@ -96,6 +106,8 @@ public class GameController implements Initializable {
         tokens.setText(Integer.toString(player.getTokens()));
         message.setWrapText(true);
         setImages(slotMachine.getImages());
+
+        logger.debug("URL: " + url);
     }
 
 
@@ -113,20 +125,27 @@ public class GameController implements Initializable {
                 this.playerController.loseMoney(player, wager);
                 int odds = slotMachine.spin();
                 setImages( slotMachine.getImages());
-                if (odds > 0){
+                if (odds > 0) {
                     int winning = wager*odds;
                     playerController.addMoney(player,winning);
                     tokens.setText(Integer.toString(player.getTokens()));
                     message.setText(String.format("You win %d tokens",winning));
+
+                    logger.info(String.format("Player(%s) won $%d", this.player.getName(), winning));
+                    logger.info("Balance: " + this.player.getTokens());
                 }
-                else{
+                else {
                     tokens.setText(Integer.toString(playerController.getMoney(player)));
                     message.setText(String.format("You lose"));
+
+                    logger.info(String.format("Player(%s) lose $%d", this.player.getName(), wager));
+                    logger.info("Balance: " + this.player.getTokens());
                 }
             }
 
-        }catch (Exception e){
+        } catch (Exception e){
             message.setText("you must enter valid numeric bets");
+            logger.error("Invalid wager: " + e);
         }
     }
 
