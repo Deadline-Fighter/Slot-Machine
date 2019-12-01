@@ -115,14 +115,6 @@ public class SlotMachine implements Spinnable{
     }
 
     private ArrayList<AbstractSlot> spinColumn(ArrayList<AbstractSlot>slots, ArrayList<AbstractSlot> col, int stepsForward) {
-        //spin a column and return a new column
-//        col.clear();
-//        Random random = new Random();
-//        int startIndex = random.nextInt(slot.length);
-//
-//        for (int i = 0;i<ROWS;i++){
-//            col.add(slot[(startIndex+i)%(slot.length)]);
-//        }
 
         ArrayList<AbstractSlot> newColumn = new ArrayList<AbstractSlot>();
         int startIndex;
