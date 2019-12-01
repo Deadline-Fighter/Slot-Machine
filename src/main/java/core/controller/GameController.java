@@ -114,7 +114,7 @@ public class GameController implements Initializable {
                 int odds = slotMachine.spin();
                 setImages( slotMachine.getImages());
                 if (odds > 0){
-                    int winning = wager*odds;
+                    int winning = (int)(wager*odds*player.getBonus());
                     playerController.addMoney(player,winning);
                     tokens.setText(Integer.toString(player.getTokens()));
                     message.setText(String.format("You win %d tokens",winning));
