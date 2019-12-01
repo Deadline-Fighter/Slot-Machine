@@ -1,4 +1,4 @@
-package core.components.slot;
+package core.model.slot;
 
 import org.junit.jupiter.api.Test;
 

@@ -1,7 +1,7 @@
-package core.components;
+package core.model;
 
 import javafx.scene.image.Image;
-import core.components.slot.*;
+import core.model.slot.*;
 import core.service.PatternChecker;
 
 import java.util.ArrayList;

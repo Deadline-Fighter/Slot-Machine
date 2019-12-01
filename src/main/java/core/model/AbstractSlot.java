@@ -1,4 +1,4 @@
-package core.components;
+package core.model;
 
 import javafx.scene.image.Image;
 

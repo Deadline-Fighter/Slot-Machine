@@ -1,6 +1,6 @@
 package core.controller;
 
-import core.components.Player;
+import core.model.Player;
 
 public class PlayerController {
     private static final int INITIAL_TOKENS = 10000;

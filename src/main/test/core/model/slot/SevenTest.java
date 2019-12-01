@@ -1,14 +1,14 @@
-package core.components.slot;
+package core.model.slot;
 
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-public class CherryTest {
+public class SevenTest {
 
     @Test
     public void testGetInstance() {
-        assertNotNull(Cherry.getCherryInstance());
+        assertNotNull(Seven.getSevenInstance());
     }
 
 }

@@ -1,6 +1,6 @@
-package core.components.slot;
+package core.model.slot;
 
-import core.components.AbstractSlot;
+import core.model.AbstractSlot;
 
 public class Watermelon extends AbstractSlot {
 

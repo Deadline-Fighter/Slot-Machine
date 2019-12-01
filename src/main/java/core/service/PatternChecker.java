@@ -1,6 +1,6 @@
 package core.service;
 
-import core.components.AbstractSlot;
+import core.model.AbstractSlot;
 
 import java.util.List;
 
