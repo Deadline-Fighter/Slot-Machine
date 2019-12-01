@@ -7,8 +7,8 @@ import javafx.scene.control.Spinner;
 import javafx.scene.control.SpinnerValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import core.components.Player;
-import core.components.SlotMachine;
+import core.model.Player;
+import core.model.SlotMachine;
 
 import java.net.URL;
 import java.util.ArrayList;

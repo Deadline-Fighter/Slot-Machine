@@ -1,4 +1,4 @@
-package core.components;
+package core.model;
 
 public interface Spinnable {
     public int spin();

@@ -1,7 +1,7 @@
 package core.service;
 
-import core.components.AbstractSlot;
-import core.components.slot.*;
+import core.model.AbstractSlot;
+import core.model.slot.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;

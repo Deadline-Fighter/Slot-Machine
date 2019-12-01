@@ -1,18 +1,13 @@
 package core.controller;
 
-import core.components.Player;
-import core.components.SlotMachine;
+import core.model.Player;
+import core.model.SlotMachine;
 import javafx.scene.control.Label;
 import javafx.scene.control.Spinner;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.mockito.junit.jupiter.MockitoExtension;
-
-import java.net.URL;
-import java.util.ResourceBundle;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
