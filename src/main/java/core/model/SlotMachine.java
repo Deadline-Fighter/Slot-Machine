@@ -6,6 +6,7 @@ import core.service.PatternChecker;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Random;
 
 public class SlotMachine implements Spinnable{
@@ -14,7 +15,7 @@ public class SlotMachine implements Spinnable{
 
     private static final int MAX_STEPS_TO_FORWARD = 7;
 
-    private ArrayList<AbstractSlot> leftSlots = new ArrayList<AbstractSlot>(
+    private List<AbstractSlot> leftSlots = new ArrayList<AbstractSlot>(
             Arrays.asList(
                     Bar.getBarInstance(),
                     Cherry.getCherryInstance(),
@@ -26,7 +27,7 @@ public class SlotMachine implements Spinnable{
             )
     );
 
-    private ArrayList<AbstractSlot> centerSlots = new ArrayList<AbstractSlot>(
+    private List<AbstractSlot> centerSlots = new ArrayList<AbstractSlot>(
             Arrays.asList(
                     Shamrock.getShamrockInstance(),
                     Cherry.getCherryInstance(),
@@ -38,7 +39,7 @@ public class SlotMachine implements Spinnable{
             )
     );
 
-    private ArrayList<AbstractSlot> rightSlots = new ArrayList<AbstractSlot>(
+    private List<AbstractSlot> rightSlots = new ArrayList<AbstractSlot>(
             Arrays.asList(
                     Watermelon.getWatermelonInstance(),
                     Seven.getSevenInstance(),
@@ -50,23 +51,35 @@ public class SlotMachine implements Spinnable{
             )
     );
 
-    public ArrayList<AbstractSlot> getLeftColumn() {
+    public List<AbstractSlot> getLeftColumn() {
         return leftColumn;
     }
 
-    public ArrayList<AbstractSlot> getCenterColumn() {
+    public List<AbstractSlot> getCenterColumn() {
         return centerColumn;
     }
 
-    public ArrayList<AbstractSlot> getRightColumn() {
+    public List<AbstractSlot> getRightColumn() {
         return rightColumn;
     }
 
-    private ArrayList<AbstractSlot> leftColumn;
+    private List<AbstractSlot> leftColumn;
 
-    private ArrayList<AbstractSlot> centerColumn;
+    private List<AbstractSlot> centerColumn;
 
-    private ArrayList<AbstractSlot> rightColumn;
+    private List<AbstractSlot> rightColumn;
+
+    public void setLeftColumn(List<AbstractSlot> leftColumn) {
+        this.leftColumn = leftColumn;
+    }
+
+    public void setCenterColumn(List<AbstractSlot> centerColumn) {
+        this.centerColumn = centerColumn;
+    }
+
+    public void setRightColumn(List<AbstractSlot> rightColumn) {
+        this.rightColumn = rightColumn;
+    }
 
     private static SlotMachine slotMachineInstance = new SlotMachine();
 
@@ -114,9 +127,9 @@ public class SlotMachine implements Spinnable{
         return maxOdds;
     }
 
-    private ArrayList<AbstractSlot> spinColumn(ArrayList<AbstractSlot>slots, ArrayList<AbstractSlot> col, int stepsForward) {
+    List<AbstractSlot> spinColumn(List<AbstractSlot>slots, List<AbstractSlot> col, int stepsForward) {
 
-        ArrayList<AbstractSlot> newColumn = new ArrayList<AbstractSlot>();
+        List<AbstractSlot> newColumn = new ArrayList<AbstractSlot>();
         int startIndex;
         if(col.size() == 0)
             startIndex = 0;
@@ -134,12 +147,6 @@ public class SlotMachine implements Spinnable{
         return stepsToForward;
     }
 
-    public void printSlots(){
-        for(int i = 0; i< ROWS;i++){
-            System.out.printf("%-15s|%-15s|%-15s\n",leftColumn.get(i).getName(),centerColumn.get(i).getName(),rightColumn.get(i).getName());
-        }
-    }
-
     public ArrayList<Image> getImages(){
         ArrayList<Image> images = new ArrayList<>();
         for(int i=0;i<ROWS;i++){
@@ -151,4 +158,15 @@ public class SlotMachine implements Spinnable{
         return images;
     }
 
+    public List<AbstractSlot> getLeftSlots() {
+        return leftSlots;
+    }
+
+    public List<AbstractSlot> getCenterSlots() {
+        return centerSlots;
+    }
+
+    public List<AbstractSlot> getRightSlots() {
+        return rightSlots;
+    }
 }
