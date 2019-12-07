@@ -206,4 +206,24 @@ public class PatternCheckerTest {
 
         assertFalse(PatternChecker.isDiagonallySameTopRightBottomLeft(left, center, right));
     }
+
+    @Test
+    public void testIsDiagonallySameTopRightBottomLeftNoMatch2() {
+        final List<AbstractSlot> right = new ArrayList<>();
+        right.add(Cherry.getCherryInstance());
+        right.add(Bar.getBarInstance());
+        right.add(Diamond.getDiamondInstance());
+
+        final List<AbstractSlot> center = new ArrayList<>();
+        center.add(Diamond.getDiamondInstance());
+        center.add(Cherry.getCherryInstance());
+        center.add(Seven.getSevenInstance());
+
+        final List<AbstractSlot> left = new ArrayList<>();
+        left.add(Bar.getBarInstance());
+        left.add(Diamond.getDiamondInstance());
+        left.add(Watermelon.getWatermelonInstance());
+
+        assertFalse(PatternChecker.isDiagonallySameTopRightBottomLeft(left, center, right));
+    }
 }
