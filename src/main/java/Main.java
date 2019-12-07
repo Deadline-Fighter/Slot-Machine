@@ -12,7 +12,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws InterruptedException {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("core/view/slotMachine.fxml"));
-            primaryStage.setTitle("Hello World");
+            primaryStage.setTitle("Online Casino");
             primaryStage.setScene(new Scene(root, 619, 487));
             primaryStage.show();
 

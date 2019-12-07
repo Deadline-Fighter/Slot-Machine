@@ -11,9 +11,9 @@ import java.util.Random;
 
 public class SlotMachine implements Spinnable{
 
-    private static final int ROWS = 3;
+    private static int ROWS = 3;
 
-    private static final int MAX_STEPS_TO_FORWARD = 7;
+    public static int MAX_STEPS_TO_FORWARD = 7;
 
     private List<AbstractSlot> leftSlots = new ArrayList<AbstractSlot>(
             Arrays.asList(
@@ -79,6 +79,18 @@ public class SlotMachine implements Spinnable{
 
     public void setRightColumn(List<AbstractSlot> rightColumn) {
         this.rightColumn = rightColumn;
+    }
+
+    public void setLeftSlots(List<AbstractSlot> leftSlots) {
+        this.leftSlots = leftSlots;
+    }
+
+    public void setCenterSlots(List<AbstractSlot> centerSlots) {
+        this.centerSlots = centerSlots;
+    }
+
+    public void setRightSlots(List<AbstractSlot> rightSlots) {
+        this.rightSlots = rightSlots;
     }
 
     private static SlotMachine slotMachineInstance = new SlotMachine();
@@ -168,5 +180,9 @@ public class SlotMachine implements Spinnable{
 
     public List<AbstractSlot> getRightSlots() {
         return rightSlots;
+    }
+
+    public static void setMaxStepsToForward(int maxStepsToForward) {
+        MAX_STEPS_TO_FORWARD = maxStepsToForward;
     }
 }

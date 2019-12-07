@@ -24,8 +24,4 @@ public class PatternChecker {
                 && centerColumn.get(1).getName().equals(rightColumn.get(0).getName());
     }
 
-//    public static boolean isSameColour() {
-//        //TODO: add colour enum or interface for each slotItem
-//        return false;
-//    }
 }
